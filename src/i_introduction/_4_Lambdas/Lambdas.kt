@@ -21,7 +21,12 @@ fun todoTask4(collection: Collection<Int>): Nothing = TODO(
     documentation = doc4(),
     references = { JavaCode4().task4(collection) })
 
-fun task4(collection: Collection<Int>): Boolean = todoTask4(collection)
+/**
+ * Both solutions returns the same, but I wasn't aware of the {@code Collection.any} method
+ */
+
+//fun task4(collection: Collection<Int>): Boolean = collection.filter { x -> x % 42 == 0 }.count() > 0
+fun task4(collection: Collection<Int>): Boolean = collection.any { x -> x % 42 == 0 }
 
 
 
